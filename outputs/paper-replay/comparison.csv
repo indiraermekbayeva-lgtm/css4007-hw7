@@ -1,0 +1,261 @@
+Method,State / action,Sweep / pass / update,Paper result,Program result,Difference,Explanation
+Model-based learning,A / stick,Observation status,unobserved,unobserved,,Same label.
+Model-based learning,A / hit,State-action count,3,3,0,Match.
+Model-based learning,A / hit -> B,Transition count,2,2,0,Match.
+Model-based learning,A / hit -> B,Transition probability (exact ratio),2/3,2/3,0,Match.
+Model-based learning,A / hit -> B,Transition probability (as displayed),0.667,0.6666666667,-0.0003333333,The paper also gives the matching exact fraction. This difference is from rounding.
+Model-based learning,A / hit -> B,Mean reward,0,0,0,Match.
+Model-based learning,A / hit -> END,Transition count,1,1,0,Match.
+Model-based learning,A / hit -> END,Transition probability (exact ratio),1/3,1/3,0,Match.
+Model-based learning,A / hit -> END,Transition probability (as displayed),0.333,0.3333333333,0.0003333333,The paper also gives the matching exact fraction. This difference is from rounding.
+Model-based learning,A / hit -> END,Mean reward,-1,-1,0,Match.
+Model-based learning,B / stick,State-action count,2,2,0,"Paper p. 3 has one successor for this pair, so its count is the pair count."
+Model-based learning,B / stick -> END,Transition count,2,2,0,Match.
+Model-based learning,B / stick -> END,Transition probability (exact ratio),1,2/2,0,Match.
+Model-based learning,B / stick -> END,Mean reward,0,0,0,Both terminal rewards (+1 and -1) are included.
+Model-based learning,B / hit,Observation status,unobserved,unobserved,,Same label.
+Model-based learning,C / stick,Observation status,unobserved,unobserved,,Same label.
+Model-based learning,C / hit,State-action count,1,1,0,"Paper p. 3 has one successor for this pair, so its count is the pair count."
+Model-based learning,C / hit -> D,Transition count,1,1,0,Match.
+Model-based learning,C / hit -> D,Transition probability (exact ratio),1,1/1,0,Match.
+Model-based learning,C / hit -> D,Mean reward,0,0,0,Match.
+Model-based learning,D / stick,Observation status,unobserved,unobserved,,Same label.
+Model-based learning,D / hit,State-action count,1,1,0,"Paper p. 3 has one successor for this pair, so its count is the pair count."
+Model-based learning,D / hit -> E,Transition count,1,1,0,Match.
+Model-based learning,D / hit -> E,Transition probability (exact ratio),1,1/1,0,Match.
+Model-based learning,D / hit -> E,Mean reward,0,0,0,Match.
+Model-based learning,E / stick,State-action count,1,1,0,"Paper p. 3 has one successor for this pair, so its count is the pair count."
+Model-based learning,E / stick -> END,Transition count,1,1,0,Match.
+Model-based learning,E / stick -> END,Game number for observed transition,4,3,-1,Paper p. 3 labels this transition g4. The replay input places it in game 3. The count is still 1.
+Model-based learning,E / stick -> END,Transition probability (exact ratio),1,1/1,0,Match.
+Model-based learning,E / stick -> END,Mean reward,0,0,0,Match.
+Model-based learning,E / hit,Observation status,unobserved,unobserved,,Same label.
+Model-based learning,All states,Total transition count,8,8,0,Match.
+Model-based learning,A,Initial value,0,0,0,Match.
+Model-based learning,A,Sweep 1 value (exact),-1/3,-1/3,0,Exact value from the substituted fractions on paper p. 3 and the replay model.
+Model-based learning,A,Sweep 1 value (as displayed),-0.333,-0.3333333333,-0.0003333333,This difference is from rounding.
+Model-based learning,A,Sweep 2 value (exact),-1/3,-1/3,0,The replay model uses the same fractions. The report displays a decimal.
+Model-based learning,A,Sweep 2 value (summary on p. 6),-0.333,-0.3333333333,-0.0003333333,The paper uses -1/3 in the sweep and rounds it in the summary.
+Model-based learning,B,Initial value,0,0,0,Match.
+Model-based learning,B,Sweep 1 value (exact),0,0,0,Match.
+Model-based learning,B,Sweep 2 value (exact),0,0,0,Match.
+Model-based learning,C,Initial value,0,0,0,Match.
+Model-based learning,C,Sweep 1 value (exact),0,0,0,Match.
+Model-based learning,C,Sweep 2 value (exact),0,0,0,Match.
+Model-based learning,D,Initial value,0,0,0,Match.
+Model-based learning,D,Sweep 1 value (exact),0,0,0,Match.
+Model-based learning,D,Sweep 2 value (exact),0,0,0,Match.
+Model-based learning,E,Initial value,0,0,0,Match.
+Model-based learning,E,Sweep 1 value (exact),0,0,0,Match.
+Model-based learning,E,Sweep 2 value (exact),0,0,0,Match.
+Every-visit Monte Carlo,A,Pass 1 / game 1 / step 1 / return,1,1,0,Match.
+Every-visit Monte Carlo,B,Pass 1 / game 1 / step 2 / return,1,1,0,Match.
+Every-visit Monte Carlo,A,Pass 1 / game 2 / step 1 / return,-1,-1,0,Match.
+Every-visit Monte Carlo,C,Pass 1 / game 3 / step 1 / return,0,0,0,Match.
+Every-visit Monte Carlo,D,Pass 1 / game 3 / step 2 / return,0,0,0,Match.
+Every-visit Monte Carlo,D,Game number in per-state notes (p. 4),1,3,2,The per-state note says g1. The game-by-game work on the same page correctly shows game 3.
+Every-visit Monte Carlo,E,Pass 1 / game 3 / step 3 / return,0,0,0,Match.
+Every-visit Monte Carlo,E,Game number in per-state notes (p. 4),1,3,2,The per-state note says g1. The game-by-game work on the same page correctly shows game 3.
+Every-visit Monte Carlo,A,Pass 1 / game 4 / step 1 / return,-1,-1,0,Match.
+Every-visit Monte Carlo,B,Pass 1 / game 4 / step 2 / return,-1,-1,0,Match.
+Every-visit Monte Carlo,A,Pass 1 / visit count,3,3,0,Match.
+Every-visit Monte Carlo,A,Pass 1 / return sum,-1,-1,0,Match.
+Every-visit Monte Carlo,A,Pass 1 / mean return (exact),-1/3,-1/3,0,Match.
+Every-visit Monte Carlo,A,Pass 1 / mean return (summary on p. 6),-0.333,-0.3333333333,-0.0003333333,The paper uses -1/3 in its Monte Carlo table and rounds it in the summary.
+Every-visit Monte Carlo,B,Pass 1 / visit count,2,2,0,Match.
+Every-visit Monte Carlo,B,Pass 1 / return sum,0,0,0,Match.
+Every-visit Monte Carlo,B,Pass 1 / mean return,0,0,0,Match.
+Every-visit Monte Carlo,C,Pass 1 / visit count,1,1,0,Match.
+Every-visit Monte Carlo,C,Pass 1 / return sum,0,0,0,Match.
+Every-visit Monte Carlo,C,Pass 1 / mean return,0,0,0,Match.
+Every-visit Monte Carlo,D,Pass 1 / visit count,1,1,0,Match.
+Every-visit Monte Carlo,D,Pass 1 / return sum,0,0,0,Match.
+Every-visit Monte Carlo,D,Pass 1 / mean return,0,0,0,Match.
+Every-visit Monte Carlo,E,Pass 1 / visit count,1,1,0,Match.
+Every-visit Monte Carlo,E,Pass 1 / return sum,0,0,0,Match.
+Every-visit Monte Carlo,E,Pass 1 / mean return,0,0,0,Match.
+TD(0),A -> B,Pass 1 / game 1 / step 1 / Old value,0,0,0,Match.
+TD(0),A -> B,Pass 1 / game 1 / step 1 / Reward,0,0,0,Match.
+TD(0),A -> B,Pass 1 / game 1 / step 1 / Successor value,0,0,0,Match.
+TD(0),A -> B,Pass 1 / game 1 / step 1 / Target,0,0,0,Match.
+TD(0),A -> B,Pass 1 / game 1 / step 1 / New value,0,0,0,Match.
+TD(0),B -> END,Pass 1 / game 1 / step 2 / Old value,0,0,0,Match.
+TD(0),B -> END,Pass 1 / game 1 / step 2 / Reward,1,1,0,Match.
+TD(0),B -> END,Pass 1 / game 1 / step 2 / Successor value,0,0,0,Match.
+TD(0),B -> END,Pass 1 / game 1 / step 2 / Target,1,1,0,Match.
+TD(0),B -> END,Pass 1 / game 1 / step 2 / New value,0.1,0.1,0,Match.
+TD(0),A -> END,Pass 1 / game 2 / step 1 / Old value,0,0,0,Match.
+TD(0),A -> END,Pass 1 / game 2 / step 1 / Reward,-1,-1,0,Match.
+TD(0),A -> END,Pass 1 / game 2 / step 1 / Successor value,0,0,0,Match.
+TD(0),A -> END,Pass 1 / game 2 / step 1 / Target,-1,-1,0,Match.
+TD(0),A -> END,Pass 1 / game 2 / step 1 / New value,-0.1,-0.1,0,Match.
+TD(0),C -> D,Pass 1 / game 3 / step 1 / Old value,0,0,0,Match.
+TD(0),C -> D,Pass 1 / game 3 / step 1 / Reward,0,0,0,Match.
+TD(0),C -> D,Pass 1 / game 3 / step 1 / Successor value,0,0,0,Match.
+TD(0),C -> D,Pass 1 / game 3 / step 1 / Target,0,0,0,Match.
+TD(0),C -> D,Pass 1 / game 3 / step 1 / New value,0,0,0,Match.
+TD(0),D -> E,Pass 1 / game 3 / step 2 / Old value,0,0,0,Match.
+TD(0),D -> E,Pass 1 / game 3 / step 2 / Reward,0,0,0,Match.
+TD(0),D -> E,Pass 1 / game 3 / step 2 / Successor value,0,0,0,Match.
+TD(0),D -> E,Pass 1 / game 3 / step 2 / Target,0,0,0,Match.
+TD(0),D -> E,Pass 1 / game 3 / step 2 / New value,0,0,0,Match.
+TD(0),E -> END,Pass 1 / game 3 / step 3 / Old value,0,0,0,Match.
+TD(0),E -> END,Pass 1 / game 3 / step 3 / Reward,0,0,0,Match.
+TD(0),E -> END,Pass 1 / game 3 / step 3 / Successor value,0,0,0,Match.
+TD(0),E -> END,Pass 1 / game 3 / step 3 / Target,0,0,0,Match.
+TD(0),E -> END,Pass 1 / game 3 / step 3 / New value,0,0,0,Match.
+TD(0),A -> B,Pass 1 / game 4 / step 1 / Old value,-0.1,-0.1,0,Match.
+TD(0),A -> B,Pass 1 / game 4 / step 1 / Reward,0,0,0,Match.
+TD(0),A -> B,Pass 1 / game 4 / step 1 / Successor value,0.1,0.1,0,Match.
+TD(0),A -> B,Pass 1 / game 4 / step 1 / Target,0.1,0.1,0,Match.
+TD(0),A -> B,Pass 1 / game 4 / step 1 / New value,-0.08,-0.08,0,Match.
+TD(0),B -> END,Pass 1 / game 4 / step 2 / Old value,0.1,0.1,0,Match.
+TD(0),B -> END,Pass 1 / game 4 / step 2 / Reward,-1,-1,0,Match.
+TD(0),B -> END,Pass 1 / game 4 / step 2 / Successor value,0,0,0,Match.
+TD(0),B -> END,Pass 1 / game 4 / step 2 / Target,-1,-1,0,Match.
+TD(0),B -> END,Pass 1 / game 4 / step 2 / New value,-0.01,-0.01,0,Match.
+TD(0),A -> B,Pass 2 / game 1 / step 1 / Old value,-0.08,-0.08,0,Match.
+TD(0),A -> B,Pass 2 / game 1 / step 1 / Reward,0,0,0,Match.
+TD(0),A -> B,Pass 2 / game 1 / step 1 / Successor value,-0.01,-0.01,0,Match.
+TD(0),A -> B,Pass 2 / game 1 / step 1 / Target,-0.01,-0.01,0,Match.
+TD(0),A -> B,Pass 2 / game 1 / step 1 / New value,-0.073,-0.073,0,Match.
+TD(0),B -> END,Pass 2 / game 1 / step 2 / Old value,-0.01,-0.01,0,Match.
+TD(0),B -> END,Pass 2 / game 1 / step 2 / Reward,1,1,0,Match.
+TD(0),B -> END,Pass 2 / game 1 / step 2 / Successor value,0,0,0,Match.
+TD(0),B -> END,Pass 2 / game 1 / step 2 / Target,1,1,0,Match.
+TD(0),B -> END,Pass 2 / game 1 / step 2 / New value,0.091,0.091,0,Match.
+TD(0),A -> END,Pass 2 / game 2 / step 1 / Old value,-0.073,-0.073,0,Match.
+TD(0),A -> END,Pass 2 / game 2 / step 1 / Reward,-1,-1,0,Match.
+TD(0),A -> END,Pass 2 / game 2 / step 1 / Successor value,0,0,0,Match.
+TD(0),A -> END,Pass 2 / game 2 / step 1 / Target,-1,-1,0,Match.
+TD(0),A -> END,Pass 2 / game 2 / step 1 / New value,-0.1657,-0.1657,0,Match.
+TD(0),C -> D,Pass 2 / game 3 / step 1 / Old value,0,0,0,Match.
+TD(0),C -> D,Pass 2 / game 3 / step 1 / Reward,0,0,0,Match.
+TD(0),C -> D,Pass 2 / game 3 / step 1 / Successor value,0,0,0,Match.
+TD(0),C -> D,Pass 2 / game 3 / step 1 / Target,0,0,0,Match.
+TD(0),C -> D,Pass 2 / game 3 / step 1 / New value,0,0,0,Match.
+TD(0),D -> E,Pass 2 / game 3 / step 2 / Old value,0,0,0,Match.
+TD(0),D -> E,Pass 2 / game 3 / step 2 / Reward,0,0,0,Match.
+TD(0),D -> E,Pass 2 / game 3 / step 2 / Successor value,0,0,0,Match.
+TD(0),D -> E,Pass 2 / game 3 / step 2 / Target,0,0,0,Match.
+TD(0),D -> E,Pass 2 / game 3 / step 2 / New value,0,0,0,Match.
+TD(0),E -> END,Pass 2 / game 3 / step 3 / Old value,0,0,0,Match.
+TD(0),E -> END,Pass 2 / game 3 / step 3 / Reward,0,0,0,Match.
+TD(0),E -> END,Pass 2 / game 3 / step 3 / Successor value,0,0,0,Match.
+TD(0),E -> END,Pass 2 / game 3 / step 3 / Target,0,0,0,Match.
+TD(0),E -> END,Pass 2 / game 3 / step 3 / New value,0,0,0,Match.
+TD(0),A -> B,Pass 2 / game 4 / step 1 / Old value,-0.1657,-0.1657,0,Match.
+TD(0),A -> B,Pass 2 / game 4 / step 1 / Reward,0,0,0,Match.
+TD(0),A -> B,Pass 2 / game 4 / step 1 / Successor value,0.091,0.091,0,Match.
+TD(0),A -> B,Pass 2 / game 4 / step 1 / Target,0.091,0.091,0,Match.
+TD(0),A -> B,Pass 2 / game 4 / step 1 / New value,-0.14003,-0.14003,0,The result is at the fold. The final pass 2 table on p. 5 clearly gives -0.14003.
+TD(0),B -> END,Pass 2 / game 4 / step 2 / Old value,0.091,0.091,0,Match.
+TD(0),B -> END,Pass 2 / game 4 / step 2 / Reward,-1,-1,0,Match.
+TD(0),B -> END,Pass 2 / game 4 / step 2 / Successor value,0,0,0,Match.
+TD(0),B -> END,Pass 2 / game 4 / step 2 / Target,-1,-1,0,Match.
+TD(0),B -> END,Pass 2 / game 4 / step 2 / New value,-0.0181,-0.0181,0,Match.
+Q-learning,A / hit -> B,Pass 1 / game 1 / step 1 / Old value,0,0,0,Match.
+Q-learning,A / hit -> B,Pass 1 / game 1 / step 1 / Reward,0,0,0,Match.
+Q-learning,A / hit -> B,Pass 1 / game 1 / step 1 / Maximum successor Q-value,0,0,0,Match.
+Q-learning,A / hit -> B,Pass 1 / game 1 / step 1 / Target,0,0,0,Match.
+Q-learning,A / hit -> B,Pass 1 / game 1 / step 1 / New value,0,0,0,Match.
+Q-learning,B / stick -> END,Pass 1 / game 1 / step 2 / Old value,0,0,0,Match.
+Q-learning,B / stick -> END,Pass 1 / game 1 / step 2 / Reward,1,1,0,Match.
+Q-learning,B / stick -> END,Pass 1 / game 1 / step 2 / Maximum successor Q-value,0,0,0,Match.
+Q-learning,B / stick -> END,Pass 1 / game 1 / step 2 / Target,1,1,0,Match.
+Q-learning,B / stick -> END,Pass 1 / game 1 / step 2 / New value,0.1,0.1,0,Match.
+Q-learning,A / hit -> END,Pass 1 / game 2 / step 1 / Old value,0,0,0,Match.
+Q-learning,A / hit -> END,Pass 1 / game 2 / step 1 / Reward,-1,-1,0,Match.
+Q-learning,A / hit -> END,Pass 1 / game 2 / step 1 / Maximum successor Q-value,0,0,0,Match.
+Q-learning,A / hit -> END,Pass 1 / game 2 / step 1 / Target,-1,-1,0,Match.
+Q-learning,A / hit -> END,Pass 1 / game 2 / step 1 / New value,-0.1,-0.1,0,Match.
+Q-learning,C / hit -> D,Pass 1 / game 3 / step 1 / Old value,0,0,0,Match.
+Q-learning,C / hit -> D,Pass 1 / game 3 / step 1 / Reward,0,0,0,Match.
+Q-learning,C / hit -> D,Pass 1 / game 3 / step 1 / Maximum successor Q-value,0,0,0,Match.
+Q-learning,C / hit -> D,Pass 1 / game 3 / step 1 / Target,0,0,0,Match.
+Q-learning,C / hit -> D,Pass 1 / game 3 / step 1 / New value,0,0,0,Match.
+Q-learning,D / hit -> E,Pass 1 / game 3 / step 2 / Old value,0,0,0,Match.
+Q-learning,D / hit -> E,Pass 1 / game 3 / step 2 / Reward,0,0,0,Match.
+Q-learning,D / hit -> E,Pass 1 / game 3 / step 2 / Maximum successor Q-value,0,0,0,Match.
+Q-learning,D / hit -> E,Pass 1 / game 3 / step 2 / Target,0,0,0,Match.
+Q-learning,D / hit -> E,Pass 1 / game 3 / step 2 / New value,0,0,0,Match.
+Q-learning,E / stick -> END,Pass 1 / game 3 / step 3 / Old value,0,0,0,Match.
+Q-learning,E / stick -> END,Pass 1 / game 3 / step 3 / Reward,0,0,0,Match.
+Q-learning,E / stick -> END,Pass 1 / game 3 / step 3 / Maximum successor Q-value,0,0,0,Match.
+Q-learning,E / stick -> END,Pass 1 / game 3 / step 3 / Target,0,0,0,Match.
+Q-learning,E / stick -> END,Pass 1 / game 3 / step 3 / New value,0,0,0,Match.
+Q-learning,A / hit -> B,Pass 1 / game 4 / step 1 / Old value,-0.1,-0.1,0,Match.
+Q-learning,A / hit -> B,Pass 1 / game 4 / step 1 / Reward,0,0,0,Match.
+Q-learning,A / hit -> B,Pass 1 / game 4 / step 1 / Maximum successor Q-value,0.1,0.1,0,Match.
+Q-learning,A / hit -> B,Pass 1 / game 4 / step 1 / Target,0.1,0.1,0,Match.
+Q-learning,A / hit -> B,Pass 1 / game 4 / step 1 / New value,-0.08,-0.08,0,Match.
+Q-learning,B / stick -> END,Pass 1 / game 4 / step 2 / Old value,Not shown,0.1,,"The paper gives the target and new Q-value here, but does not show the old value."
+Q-learning,B / stick -> END,Pass 1 / game 4 / step 2 / Reward,-1,-1,0,Match.
+Q-learning,B / stick -> END,Pass 1 / game 4 / step 2 / Maximum successor Q-value,0,0,0,Match.
+Q-learning,B / stick -> END,Pass 1 / game 4 / step 2 / Target,-1,-1,0,Match.
+Q-learning,B / stick -> END,Pass 1 / game 4 / step 2 / New value,-0.01,-0.01,0,Match.
+Q-learning,A / hit -> B,Pass 2 / game 1 / step 1 / Old value,Not shown,-0.08,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,A / hit -> B,Pass 2 / game 1 / step 1 / Reward,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,A / hit -> B,Pass 2 / game 1 / step 1 / Maximum successor Q-value,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,A / hit -> B,Pass 2 / game 1 / step 1 / Target,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,A / hit -> B,Pass 2 / game 1 / step 1 / New value,Not shown,-0.072,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,B / stick -> END,Pass 2 / game 1 / step 2 / Old value,Not shown,-0.01,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,B / stick -> END,Pass 2 / game 1 / step 2 / Reward,Not shown,1,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,B / stick -> END,Pass 2 / game 1 / step 2 / Maximum successor Q-value,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,B / stick -> END,Pass 2 / game 1 / step 2 / Target,Not shown,1,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,B / stick -> END,Pass 2 / game 1 / step 2 / New value,Not shown,0.091,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,A / hit -> END,Pass 2 / game 2 / step 1 / Old value,Not shown,-0.072,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,A / hit -> END,Pass 2 / game 2 / step 1 / Reward,Not shown,-1,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,A / hit -> END,Pass 2 / game 2 / step 1 / Maximum successor Q-value,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,A / hit -> END,Pass 2 / game 2 / step 1 / Target,Not shown,-1,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,A / hit -> END,Pass 2 / game 2 / step 1 / New value,Not shown,-0.1648,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,C / hit -> D,Pass 2 / game 3 / step 1 / Old value,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,C / hit -> D,Pass 2 / game 3 / step 1 / Reward,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,C / hit -> D,Pass 2 / game 3 / step 1 / Maximum successor Q-value,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,C / hit -> D,Pass 2 / game 3 / step 1 / Target,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,C / hit -> D,Pass 2 / game 3 / step 1 / New value,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,D / hit -> E,Pass 2 / game 3 / step 2 / Old value,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,D / hit -> E,Pass 2 / game 3 / step 2 / Reward,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,D / hit -> E,Pass 2 / game 3 / step 2 / Maximum successor Q-value,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,D / hit -> E,Pass 2 / game 3 / step 2 / Target,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,D / hit -> E,Pass 2 / game 3 / step 2 / New value,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,E / stick -> END,Pass 2 / game 3 / step 3 / Old value,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,E / stick -> END,Pass 2 / game 3 / step 3 / Reward,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,E / stick -> END,Pass 2 / game 3 / step 3 / Maximum successor Q-value,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,E / stick -> END,Pass 2 / game 3 / step 3 / Target,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,E / stick -> END,Pass 2 / game 3 / step 3 / New value,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,A / hit -> B,Pass 2 / game 4 / step 1 / Old value,Not shown,-0.1648,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,A / hit -> B,Pass 2 / game 4 / step 1 / Reward,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,A / hit -> B,Pass 2 / game 4 / step 1 / Maximum successor Q-value,Not shown,0.091,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,A / hit -> B,Pass 2 / game 4 / step 1 / Target,Not shown,0.091,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,A / hit -> B,Pass 2 / game 4 / step 1 / New value,Not shown,-0.13922,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,B / stick -> END,Pass 2 / game 4 / step 2 / Old value,Not shown,0.091,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,B / stick -> END,Pass 2 / game 4 / step 2 / Reward,Not shown,-1,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,B / stick -> END,Pass 2 / game 4 / step 2 / Maximum successor Q-value,Not shown,0,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,B / stick -> END,Pass 2 / game 4 / step 2 / Target,Not shown,-1,,The PDF gives the final Q-table but does not show the pass 2 updates.
+Q-learning,B / stick -> END,Pass 2 / game 4 / step 2 / New value,Not shown,-0.0181,,The PDF gives the final Q-table but does not show the pass 2 updates.
+TD(0),A,Pass 1 / value table,-0.08,-0.08,0,Match.
+TD(0),A,Pass 2 / final value table,-0.14003,-0.14003,0,Match.
+TD(0),B,Pass 1 / value table,-0.01,-0.01,0,Match.
+TD(0),B,Pass 2 / final value table,-0.0181,-0.0181,0,Match.
+TD(0),C,Pass 1 / value table,0,0,0,Match.
+TD(0),C,Pass 2 / final value table,0,0,0,Match.
+TD(0),D,Pass 1 / value table,0,0,0,Match.
+TD(0),D,Pass 2 / final value table,0,0,0,Match.
+TD(0),E,Pass 1 / value table,0,0,0,Match.
+TD(0),E,Pass 2 / final value table,0,0,0,Match.
+Q-learning,A / stick,Pass 2 / final Q-table,0,0,0,Match.
+Q-learning,A / hit,Pass 2 / final Q-table,-0.13922,-0.13922,0,Match.
+Q-learning,A,Pass 2 / greedy action,stick,stick,,Same label.
+Q-learning,B / stick,Pass 2 / final Q-table,-0.0181,-0.0181,0,Match.
+Q-learning,B / hit,Pass 2 / final Q-table,0,0,0,Match.
+Q-learning,B,Pass 2 / greedy action,hit,hit,,Same label.
+Q-learning,C / stick,Pass 2 / final Q-table,0,0,0,Match.
+Q-learning,C / hit,Pass 2 / final Q-table,0,0,0,Match.
+Q-learning,C,Pass 2 / greedy action,tie,tie,,Same label.
+Q-learning,D / stick,Pass 2 / final Q-table,0,0,0,Match.
+Q-learning,D / hit,Pass 2 / final Q-table,0,0,0,Match.
+Q-learning,D,Pass 2 / greedy action,tie,tie,,Same label.
+Q-learning,E / stick,Pass 2 / final Q-table,0,0,0,Match.
+Q-learning,E / hit,Pass 2 / final Q-table,0,0,0,Match.
+Q-learning,E,Pass 2 / greedy action,tie,tie,,Same label.
