@@ -1,0 +1,10 @@
+training_seed,policy,training_epsilon,evaluation_seed,wins,losses,draws,cutoffs,mean_reward,unknown_state_visits,distinct_unknown_states
+11,baseline,,1011,2962,6462,576,0,-0.35,0,0
+11,q_learning,0.2,1011,4228,4882,890,0,-0.0654,0,0
+11,q_learning,0.0,1011,4100,4929,971,0,-0.0829,0,0
+22,baseline,,1022,2935,6481,584,0,-0.3546,0,0
+22,q_learning,0.2,1022,4220,4919,861,0,-0.0699,0,0
+22,q_learning,0.0,1022,4100,4975,925,0,-0.0875,0,0
+33,baseline,,1033,2950,6496,554,0,-0.3546,0,0
+33,q_learning,0.2,1033,4124,5025,851,0,-0.0901,0,0
+33,q_learning,0.0,1033,4098,4943,959,0,-0.0845,0,0

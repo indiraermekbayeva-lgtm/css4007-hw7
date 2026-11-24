@@ -1,0 +1,4 @@
+seed,completed_games,transitions,wins,losses,draws,cutoffs,mean_reward
+11,10000,17958,2991,6415,594,0,-0.3424
+22,10000,18036,2940,6447,613,0,-0.3507
+33,10000,17912,2904,6489,607,0,-0.3585

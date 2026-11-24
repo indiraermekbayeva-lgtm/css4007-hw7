@@ -1,0 +1,4 @@
+seed,epsilon,completed_games,wins,losses,draws,cutoffs,mean_reward,updates,observed_states,observed_pairs
+11,0.2,50000,19446,26613,3941,0,-0.14334,74943,280,560
+22,0.2,50000,19445,26600,3955,0,-0.1431,75558,280,560
+33,0.2,50000,19552,26548,3900,0,-0.13992,75302,280,560
